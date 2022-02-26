@@ -2,11 +2,51 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>my-framework</artifactId>
+        <groupId>com.muxi</groupId>
+        <version>1.0</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.muxi</groupId>
     <artifactId>my-dubbo</artifactId>
-    <version>1.0</version>
+    <packaging>pom</packaging>
+    <description>
+        dubbo 的使用
+    </description>
+    <modules>
+        <module>dubbo-spring-boot-provider</module>
+        <module>dubbo-spring-boot-interface</module>
+        <module>dubbo-spring-boot-consumer</module>
 
+    </modules>
+    <properties>
+        <spring-boot-maven-plugin.version>2.1.4.RELEASE</spring-boot-maven-plugin.version>
+
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Dubbo Spring boot Starter -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.muxi</groupId>
+            <artifactId>dubbo-spring-boot-interface</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

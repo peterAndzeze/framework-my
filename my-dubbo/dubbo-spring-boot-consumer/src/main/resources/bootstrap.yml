@@ -1,0 +1,30 @@
+dubbo:
+  application:
+    name: dubbo-consumer
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: dubbo-consumer
+    address: nacos://localhost:8848
+    subscribe: true
+  config-center:
+    address: nacos://localhost:8848
+  metadata-report:
+    address: nacos://localhost:8848
+  consumer:
+    check: false
+    retries: 3
+    timeout: 3000
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: my
+        group: dubbo
+        service: dubbo-consumer
+  application:
+    name: dubbo-consumer
+server:
+  port: 8082
